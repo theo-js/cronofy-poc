@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect, useState } from "react";
 
 export const CronofyElementWrapper: FC<{
   id: string;
-  loadElement: () => any;
+  loadElement: () => Promise<any>;
   children?: ReactNode;
 }> = ({ id, loadElement, children }) => {
   //Attributes
@@ -10,7 +10,9 @@ export const CronofyElementWrapper: FC<{
 
   //Effects
   useEffect(() => {
-    if (!element) setElement(loadElement());
+    if (!element) {
+      loadElement().then((element) => setElement(element));
+    }
   }, []);
 
   //Render

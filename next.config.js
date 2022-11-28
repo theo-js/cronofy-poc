@@ -1,7 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+const withTM = require("next-transpile-modules")(["cronofy-elements"]);
 
-module.exports = nextConfig
+module.exports = withTM({
+  swcMinify: true,
+  poweredByHeader: false,
+});

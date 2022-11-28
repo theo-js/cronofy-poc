@@ -1,9 +1,3 @@
-POST api.cronofy.com/v1/element_tokens
-Authorization: Bearer CRN_D4ueFaF23Gi73KPldIwCz6EiDZtPgGESyNA5d8
-Content-Type: application/json
+### GET CRONOFY TOKEN
 
-{
-    "version": "1",
-    "permissions": ["agenda"],
-    "origin": "http://localhost"
-}
+GET http://localhost:3001/api/cronofy/token
